@@ -13,11 +13,10 @@ and open the template in the editor.
         <script language="javascript" type="text/javascript">
             var image = new Array(5);
             image[0] = "208119_2034369263048_3217974_n.jpg";
-            image[1] = "208119_2034369263048_3217974_n.jpg";
+            image[1] = "2e35a95.jpg";
             image[2] = "208119_2034369263048_3217974_n.jpg";
             image[3] = "208119_2034369263048_3217974_n.jpg";
             image[4] = "208119_2034369263048_3217974_n.jpg";
-            
 
 
         </script>
@@ -26,12 +25,22 @@ and open the template in the editor.
 
             </div>
             <div class="gallery">
-                
-                <img id="scrollThumb4" height="100" src="208119_2034369263048_3217974_n.jpg" />
-                <img id="scrollThumb4" height="100" src="208119_2034369263048_3217974_n.jpg" />
-                <img id="scrollThumb4" height="100" src="208119_2034369263048_3217974_n.jpg" />
-                <img id="scrollThumb4" height="100" src="208119_2034369263048_3217974_n.jpg" />
-                <img id="scrollThumb4" height="100" src="208119_2034369263048_3217974_n.jpg" />
+
+                <script>
+
+                    for (var i = 0; i < image.length; i++) {
+               
+             document.write(" <img id='scrollThumb4' height='100' src='208119_2034369263048_3217974_n.jpg' />");
+                    }
+                </script>
+
+
+
+
+
+
+
+
             </div>
 
 
