@@ -20,13 +20,16 @@
 
 }
 .main_image{
-    border: white solid 1px;
-    background-color: white;
     width: 650px;
     height: 300px;
     margin:auto;
     margin-top: 20px;
 
+}
+
+.main_image img{
+        width: 650px;
+    height: 300px;
 }
 .gallery{
     width: 650px;
@@ -35,10 +38,10 @@
     padding:0px;
 
 }
-img{
+.gallery img{
     width: 117px;
     height: 78px;
-    margin-left: 8px;
+    margin-left: 10px;
     margin-bottom: 4px;
 
 }
