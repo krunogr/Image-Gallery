@@ -1,7 +1,4 @@
-<!--
-To change this template, choose Tools | Templates
-and open the template in the editor.
--->
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,6 +9,7 @@ and open the template in the editor.
     <body>
         <script language="javascript" type="text/javascript">
             var image = new Array(10);
+            var lastImage = 0;
             image[0] = "photos/image_0.jpg";
             image[1] = "photos/image_1.jpg";
             image[2] = "photos/image_2.jpg";
@@ -26,27 +24,58 @@ and open the template in the editor.
             function thumbOnMouseOver(thumbIndex) {
 //                document.getElementById("main_image").innerHTML = "<img src=" + image[thumbIndex] + " />";
                 document.getElementById("chosen_image").setAttribute('src', image[thumbIndex]);
+                lastImage = thumbIndex;
 
             }
-        </script>
-        <div class="container">
-            <div class="main_image" id='main_image'>
-                <img id='chosen_image' src=""/>
-            </div>
-            <div class="gallery" id='gallery'>
 
-                <script>
-                    var string = "";
-                    document.getElementById("chosen_image").setAttribute('src', image[0]);
-                    for (var i = 0; i < image.length; i++) {
-                        string = string.concat("<img id=thumb" + i + " src=" + image[i] + " onmouseover='thumbOnMouseOver(" + i + ");'/>");
-
+            function checkWhereIsImage() {
+                var i;
+                for (i = 0; i < image.length; i++) {
+                    if ((document.getElementById("chosen_image").getAttribute('src')) == image[i]) {
+                        lastImage = i;
+                        break;
                     }
-                    document.getElementById("gallery").innerHTML = string;
-
-                </script>
+                }
+                return i;
+            }
+            function getPreviousImage() {
+                if (checkWhereIsImage() === 0) {
+                    lastImage = image.length - 1;
+                }
+                else {
+                    lastImage--;
+                }
+                document.getElementById("chosen_image").setAttribute('src', image[lastImage]);
+            }
+            function getNextImage() {
+                if (checkWhereIsImage() === image.length - 1) {
+                    lastImage = 0;
+                }
+                else {
+                    lastImage++;
+                }
+                document.getElementById("chosen_image").setAttribute('src', image[lastImage]);
+            }
+        </script>
+        <div class="main_image" id='main_image'>
+            <img id='chosen_image' src=""/>
+            <div class="changeImageDown" id="changeImageDown" onclick="getPreviousImage();">
             </div>
+            <div class="changeImageUp" id="changeImageUp" onclick="getNextImage()">
+            </div>
+        </div>
+        <div class="gallery" id='gallery'>
 
+            <script>
+            var string = "";
+            document.getElementById("chosen_image").setAttribute('src', image[0]);
+            for (var i = 0; i < image.length; i++) {
+                string = string.concat("<img id=thumb" + i + " src=" + image[i] + " onmouseover='thumbOnMouseOver(" + i + ");'/>");
+
+            }
+            document.getElementById("gallery").innerHTML = string;
+
+            </script>
         </div>
     </body>
 </html>
