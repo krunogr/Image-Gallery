@@ -1,0 +1,45 @@
+/* 
+    Document   : css
+    Created on : 07.11.2014., 15:53:21
+    Author     : Kruno
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.container{
+    position:fixed;
+    background-color :#434343;
+    width: 800px;
+    border: white solid 1px;
+    min-height: 500px;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+.main_image{
+    border: white solid 1px;
+    background-color: white;
+    width: 650px;
+    height: 300px;
+    margin:auto;
+    margin-top: 20px;
+
+}
+.gallery{
+    width: 650px;
+    margin:auto;
+    margin-top: 80px;
+    padding:0px;
+
+}
+img{
+    width: 117px;
+    height: 78px;
+    margin-left: 8px;
+    margin-bottom: 4px;
+
+}
+
