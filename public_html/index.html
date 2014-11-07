@@ -12,16 +12,16 @@ and open the template in the editor.
     <body>
         <script language="javascript" type="text/javascript">
             var image = new Array(10);
-            image[0] = "208119_2034369263048_3217974_n.jpg";
-            image[1] = "2e35a95.jpg";
-            image[2] = "208119_2034369263048_3217974_n.jpg";
-            image[3] = "208119_2034369263048_3217974_n.jpg";
-            image[4] = "208119_2034369263048_3217974_n.jpg";
-            image[5] = "208119_2034369263048_3217974_n.jpg";
-            image[6] = "2e35a95.jpg";
-            image[7] = "208119_2034369263048_3217974_n.jpg";
-            image[8] = "208119_2034369263048_3217974_n.jpg";
-            image[9] = "foggy_colors-wallpaper-1920x1080.jpg";
+            image[0] = "photos/image_0.jpg";
+            image[1] = "photos/image_1.jpg";
+            image[2] = "photos/image_2.jpg";
+            image[3] = "photos/image_3.jpg";
+            image[4] = "photos/image_4.jpg";
+            image[5] = "photos/image_5.jpg";
+            image[6] = "photos/image_6.jpg";
+            image[7] = "photos/image_7.jpg";
+            image[8] = "photos/image_8.jpg";
+            image[9] = "photos/image_9.jpg";
 
             function thumbOnMouseOver(thumbIndex) {
 //                document.getElementById("main_image").innerHTML = "<img src=" + image[thumbIndex] + " />";
@@ -31,12 +31,13 @@ and open the template in the editor.
         </script>
         <div class="container">
             <div class="main_image" id='main_image'>
-                <img id='chosen_image' src="208119_2034369263048_3217974_n.jpg"/>
+                <img id='chosen_image' src=""/>
             </div>
             <div class="gallery" id='gallery'>
 
                 <script>
                     var string = "";
+                    document.getElementById("chosen_image").setAttribute('src', image[0]);
                     for (var i = 0; i < image.length; i++) {
                         string = string.concat("<img id=thumb" + i + " src=" + image[i] + " onmouseover='thumbOnMouseOver(" + i + ");'/>");
 
